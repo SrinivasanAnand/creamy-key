@@ -1,0 +1,173 @@
+/* Apply Open Sans font to everything */
+* {
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    background-color: darkslateblue;
+}
+
+header {
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 13px 20px 13px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 25%;
+    margin: 0 auto;
+}
+
+header:after {
+    content: "";
+    background-color: #ffe54c;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+}
+
+@media (max-width: 767px) {
+    header {
+        width: 85%;
+    }
+}
+
+header h1 {
+    margin: 0;
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1;
+    -webkit-text-stroke: 0.8px black;
+    text-decoration: underline;
+}
+
+h2 {
+    margin: 0.5em 0;
+    margin-top: 0;
+    color: white;
+    /* text-decoration: underline; */
+}
+
+/* Basic layout: members on left, results on right */
+.main-content {
+    display: flex;
+    margin-top: 0.25em;
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+    .main-content {
+        margin-top: 1em;
+    }
+}
+
+.left-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.left-column h2 {
+    text-align: center;
+}
+
+.right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right-column h2 {
+    text-align: center;
+}
+
+.people-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.group-chats-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Button 54 styling for all buttons */
+.button-54 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-bottom: 12px;
+    width: 100px;
+    box-sizing: border-box;
+}
+
+.person-button {
+    width: 110px;
+}
+
+.button-54:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+}
+
+.person-button.selected {
+    background-color: #ffe54c;
+    color: black;
+}
+
+.group-chat-button {
+    width: 150px;
+}
+
+.group-chat-button.highlighted {
+    background-color: #ffe54c;
+    color: black;
+}
+
+.group-chat-button.potential {
+    background-color: #fff9c4 !important;
+    color: black !important;
+}
+
+.clear-all-button {
+    margin-bottom: 15px;
+    width: 110px;
+    align-self: center;
+}
+
+@media (min-width: 768px) {
+    .button-54 {
+        padding: 0.25em 0.75em;
+    }
+    
+    header {
+        padding: 13px 50px 13px;
+    }
+}

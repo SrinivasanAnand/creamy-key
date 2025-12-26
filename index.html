@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creamy Key - Find Group Chats</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Creamy Key</h1>
+        </header>
+
+        <div class="main-content">
+            <!-- Left Column: People Selection -->
+            <div class="left-column">
+                <h2>People</h2>
+                <div id="people-container" class="people-grid">
+                    <!-- People buttons will be dynamically added here -->
+                </div>
+                <button id="clear-all-button" class="clear-all-button button-54">Clear All</button>
+            </div>
+
+            <!-- Right Column: Group Chats -->
+            <div class="right-column">
+                <h2>Group Chats</h2>
+                <div id="results-container" class="group-chats-grid">
+                    <!-- Group chat buttons will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load the JavaScript classes -->
+    <script src="js/person.js"></script>
+    <script src="js/groupchat.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/data-loader.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
+
