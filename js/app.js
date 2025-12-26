@@ -104,6 +104,8 @@ function toggleGroupMembers(group) {
     } else {
         // Select all members of this group
         selectGroupMembers(group);
+        // Display group chat details
+        displayGroupChatDetails(group);
     }
 }
 
@@ -160,6 +162,8 @@ function deselectAll() {
         button.classList.remove('potential');
     });
     
+    // Clear group chat details
+    clearGroupChatDetails();
 }
 
 // Update the results based on selected people - highlight matching and potential group chats
@@ -220,6 +224,49 @@ function updateResults() {
             exactButton.classList.add('highlighted');
         }
     }
+}
+
+// Display group chat details in the third column
+function displayGroupChatDetails(group) {
+    const detailsContainer = document.getElementById('details-container');
+    if (!detailsContainer) return;
+    
+    let html = '';
+    
+    if (group.purpose) {
+        html += `<div class="details-purpose">
+            <h3>Purpose</h3>
+            <p>${escapeHtml(group.purpose)}</p>
+        </div>`;
+    }
+    
+    if (group.notes) {
+        html += `<div class="details-notes">
+            <h3>Notes</h3>
+            <p>${escapeHtml(group.notes)}</p>
+        </div>`;
+    }
+    
+    if (!group.purpose && !group.notes) {
+        html = '<p class="details-placeholder">No details available for this group chat</p>';
+    }
+    
+    detailsContainer.innerHTML = html;
+}
+
+// Clear group chat details
+function clearGroupChatDetails() {
+    const detailsContainer = document.getElementById('details-container');
+    if (!detailsContainer) return;
+    
+    detailsContainer.innerHTML = '<p class="details-placeholder">No group chat selected</p>';
+}
+
+// Helper function to escape HTML to prevent XSS
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
 }
 
 // Set up any additional event listeners

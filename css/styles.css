@@ -48,7 +48,7 @@ header h1 {
     color: white;
     position: relative;
     z-index: 1;
-    -webkit-text-stroke: 0.8px black;
+    -webkit-text-stroke: 0.5px black;
     text-decoration: underline;
 }
 
@@ -92,6 +92,76 @@ h2 {
 
 .right-column h2 {
     text-align: center;
+}
+
+.details-column {
+    flex: 1;
+    display: none; /* Hidden by default (mobile) */
+    flex-direction: column;
+    align-items: center;
+}
+
+.details-column h2 {
+    text-align: center;
+}
+
+.details-content {
+    width: 100%;
+    max-width: 300px;
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid black;
+    color: white;
+    min-height: 200px;
+}
+
+.details-placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+}
+
+.details-purpose {
+    margin-bottom: 1em;
+}
+
+.details-purpose h3 {
+    color: #ffe54c;
+    margin: 0 0 0.5em 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.details-purpose p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.details-notes {
+    margin-top: 1em;
+}
+
+.details-notes h3 {
+    color: #ffe54c;
+    margin: 0 0 0.5em 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.details-notes p {
+    margin: 0;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+/* Show details column on desktop */
+@media (min-width: 768px) {
+    .details-column {
+        display: flex;
+    }
 }
 
 .people-grid {
@@ -163,6 +233,10 @@ h2 {
 }
 
 @media (min-width: 768px) {
+    .main-content {
+        margin-top: 1.5em;
+    }
+    
     .button-54 {
         padding: 0.25em 0.75em;
     }
